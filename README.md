@@ -50,7 +50,7 @@ Job recommendation system is an important machine learning technique in helping 
 - Job views dataset: 'Applicant.ID', 'Job.ID', 'Position', 'Company' and 'City'
 - Experience dataset: 'Applicant.ID' and 'Position.Name'
 - Position of Interest dataset: ‘Applicant.ID’ and ‘Position.Of.Interest’  
-   I chose above features because these features are the main information which contains the key words for our recommendation system. Some unrelated information, such as employer name, start time, end time and update time, etc., were dropped. Meanwhile, the features having above 50% missing values were also removed, such as job requirements and salary, because they will affect the recommendation result.
+I chose above features because these features are the main information which contains the key words for our recommendation system. Some unrelated information, such as employer name, start time, end time and update time, etc., were dropped. Meanwhile, the features having above 50% missing values were also removed, such as job requirements and salary, because they will affect the recommendation result.
 
 ## 4.	Result
    As I build recommendations systems using mainly text data and because there is no predefined testing matrix available for generating the accuracy score, I need to check the result and the performance of different recommendation systems manually.  
