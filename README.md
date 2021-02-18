@@ -35,8 +35,10 @@ Job recommendation system is an important machine learning technique in helping 
    In order to deal with “cold start” problem, we build a recommender to recommend the most popular jobs for users has none or little historical information. The process of the system is:
  - Generate popular job ranking: Group positions of the jobs viewed by applicants and sort them to look for top k popular positions current available.
  - Recommend top k popular jobs.  
+
 (2) Content-based recommender  
    For the users who are not cold start, we use content-based recommender. In order to calculate the similarity score and get the top recommend jobs, the cosine similarity and KNN were applied.  
+
 (3) Hybrid recommender  
    In the final recommender system, we will hybrid the popularity-based recommender and the content-based recommender. For users without sufficient information about profile, we use the popularity-based recommender. Otherwise, the content-based recommender will be used to find similarities among users and jobs information.
    
@@ -46,8 +48,8 @@ Job recommendation system is an important machine learning technique in helping 
 ### 3.2	User corpus
    For creating the user corpus, we used the following significant attributes in each file:
 - Job views dataset: 'Applicant.ID', 'Job.ID', 'Position', 'Company' and 'City'
-   - Experience dataset: 'Applicant.ID' and 'Position.Name'
-   - Position of Interest dataset: ‘Applicant.ID’ and ‘Position.Of.Interest’  
+- Experience dataset: 'Applicant.ID' and 'Position.Name'
+- Position of Interest dataset: ‘Applicant.ID’ and ‘Position.Of.Interest’  
    I chose above features because these features are the main information which contains the key words for our recommendation system. Some unrelated information, such as employer name, start time, end time and update time, etc., were dropped. Meanwhile, the features having above 50% missing values were also removed, such as job requirements and salary, because they will affect the recommendation result.
 
 ## 4.	Result
