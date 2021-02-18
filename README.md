@@ -3,7 +3,7 @@
 ### 1.1	Objectives
 Job recommendation system is an important machine learning technique in helping people especially new graduate to find satisfying and promising jobs. The objective of this project is to build a job recommendation system applying unsupervised leaning to recommend the most related and most popular jobs for job seekers according to their skills, work experience, interested positions and job descriptions. 
 ### 1.2	Dataset
-   4 datasets used in this project are as follows:\
+   4 datasets used in this project are as follows:
 - The Combined_Jobs_Final.csv file: the file lists the main data for 84,090 jobs in 5470 cities. There are 23 contributes/features in the file, which include job ID, job title, description, company, city, salary, etc.
 - The Job_Views.csv file: the file lists the information of jobs viewed by applicants. 
 - The Experience.csv: the file containing the work experience for applicants.
@@ -11,19 +11,19 @@ Job recommendation system is an important machine learning technique in helping 
    So, the goal of this project is to build a job recommender using the information of 7037 applicants and 84,090 positions.
    
 ## Methodology
-   Since we have the datasets of work experience and job preference for applicants, and the features about available positions, and these applications has more textual data and there are no ratings available for any job, a content-based collaborative filtering is an appropriate choice for this recommender system. 
-   Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback. So, we can calculate the similarity between an applicant’s previous experience and interest and available jobs, in order to recommend similar jobs to the applicant. What’s more, in order to deal with the “Cold start” problem, which means some totally new applicants has no information for reference, I plan to recommend jobs according to there popularity. I will recommend the most popular jobs to these new applicants.
+   Since we have the datasets of work experience and job preference for applicants, and the features about available positions, and these applications has more textual data and there are no ratings available for any job, a content-based collaborative filtering is an appropriate choice for this recommender system.  
+   Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback. So, we can calculate the similarity between an applicant’s previous experience and interest and available jobs, in order to recommend similar jobs to the applicant. What’s more, in order to deal with the “Cold start” problem, which means some totally new applicants has no information for reference, I plan to recommend jobs according to there popularity. I will recommend the most popular jobs to these new applicants.  
    The process starts by cleaning and preparing the datasets of jobs and users respectively. Then get the numerical features from data using 2 different feature extraction techniques (TF-IDF, CountVectorizer). After that I will compute the similarity (cosine similarity) to get the similarity between previous user jobs or jobs which user has manifested interest and the available jobs. Finally, the model gets the top recommend jobs according to the score of the similarity. I will also compare the results from TF-IDF, CountVectorizer and KNN.
 ### 2.1	Data cleaning
    We can see from the figure bellow that several selected columns in datasets showed some missing values. So, data cleaning was implemented to deal with this problem. For the column “City”, I manually added their head quarters’ location as their location by simply searching at google, since there are only 10 companies' cities that have NaN values. For the columns “Company” and “Education.Requir” that I cannot fix, I still leave it as ‘Nan’. Because I think it will not severely influence the result.
 ### 2.2	Data preparation
    In order to prepare my data well for calculating similarity and clustering, preparation for data include:
-   •	In order to create job corpus, combine the columns of position, company, city, emp_type, job description and title.
-   •	Clean the job corpus by removing stop words.
-   •	Stemming the job corpus.
-   •	Transform text to lower case.
-   •	Create user/applicant corpus by merging Job_View.csv, Experence.csv and Positions_Of_Interest.csv.
-   •	Conduct text cleaning and transformation for user corpus as job corpus.
+- In order to create job corpus, combine the columns of position, company, city, emp_type, job description and title.
+- Clean the job corpus by removing stop words.
+- Stemming the job corpus.
+- Transform text to lower case.
+- Create user/applicant corpus by merging Job_View.csv, Experence.csv and Positions_Of_Interest.csv.
+- Conduct text cleaning and transformation for user corpus as job corpus.
 ### 2.3	Feature extraction
    Two feature extraction techniques used for NLP are introduced as follows:
    •	CountVectorizer
