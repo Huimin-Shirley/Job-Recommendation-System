@@ -34,9 +34,9 @@ Job recommendation system is an important machine learning technique in helping 
 (1) Recommender by popularity  
    In order to deal with “cold start” problem, we build a recommender to recommend the most popular jobs for users has none or little historical information. The process of the system is:
  - Generate popular job ranking: Group positions of the jobs viewed by applicants and sort them to look for top k popular positions current available.
- - Recommend top k popular jobs.
+ - Recommend top k popular jobs.  
 (2) Content-based recommender  
-   For the users who are not cold start, we use content-based recommender. In order to calculate the similarity score and get the top recommend jobs, the cosine similarity and KNN were applied.
+   For the users who are not cold start, we use content-based recommender. In order to calculate the similarity score and get the top recommend jobs, the cosine similarity and KNN were applied.  
 (3) Hybrid recommender  
    In the final recommender system, we will hybrid the popularity-based recommender and the content-based recommender. For users without sufficient information about profile, we use the popularity-based recommender. Otherwise, the content-based recommender will be used to find similarities among users and jobs information.
    
