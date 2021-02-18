@@ -12,7 +12,9 @@ Job recommendation system is an important machine learning technique in helping 
    
 ## Methodology
    Since we have the datasets of work experience and job preference for applicants, and the features about available positions, and these applications has more textual data and there are no ratings available for any job, a content-based collaborative filtering is an appropriate choice for this recommender system.  
+   
    Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback. So, we can calculate the similarity between an applicant’s previous experience and interest and available jobs, in order to recommend similar jobs to the applicant. What’s more, in order to deal with the “Cold start” problem, which means some totally new applicants has no information for reference, I plan to recommend jobs according to there popularity. I will recommend the most popular jobs to these new applicants.  
+   
    The process starts by cleaning and preparing the datasets of jobs and users respectively. Then get the numerical features from data using 2 different feature extraction techniques (TF-IDF, CountVectorizer). After that I will compute the similarity (cosine similarity) to get the similarity between previous user jobs or jobs which user has manifested interest and the available jobs. Finally, the model gets the top recommend jobs according to the score of the similarity. I will also compare the results from TF-IDF, CountVectorizer and KNN.
 ### 2.1	Data cleaning
    We can see that several selected columns in datasets showed some missing values. So, data cleaning was implemented to deal with this problem. For the column “City”, I manually added their head quarters’ location as their location by simply searching at google, since there are only 10 companies' cities that have NaN values. For the columns “Company” and “Education.Requir” that I cannot fix, I still leave it as ‘Nan’. Because I think it will not severely influence the result.
@@ -66,6 +68,7 @@ I chose above features because these features are the main information which con
    
 ## 5.	Discussion
    In this project, I built a job recommendation system using different feature extraction techniques (TF-IDF and CountVectorizer), different machining leaning approaches (cosine similarity and KNN) and different recommendation methods (content-based and popularity-based recommender). The “cold start” problem was also considered in this system by combining two recommenders together. Among those reformers I built, the content-based recommender with TF-IDF and CountVectorizer showed a good performance in recommending the most related jobs, since it can find all similar recommendations quickly and list corresponding similarity scores. However, the content-based recommender with KNN performed not well, which could only find a small number of similar recommendations. Moreover, the established model also showed its ability in dealing with “cold start” problem using popularity-based recommender. So, I think this job recommendation system could be used in the real world and help job seekers handle their frustrating job-hunting problem.  
+
    In my future work, I will try to find more comprehensive datasets to improve the recommendation accuracy of models, such as the resume of applicants, job postings, locations, etc. The test dataset is also needed for evaluating the performance of recommenders.
 
 
